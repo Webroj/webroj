@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+{% block title %} Portfolio {% endblock title %}
+{% block body %}
+
+
+    <!-- Start Page Title Area -->
+    <div class="page-title-area page-title-style-two">
+        <div class="container">
+            <div class="page-title-content">
+                <h2> Our Portfolio</h2>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li>Portfolio</li>
+                </ul>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+    
+    <!-- Start Blog Area -->
+    <div class="blog-area ptb-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for port in uport %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog-post">
+                        <div class="image">
+                            <a href="blog-details.html" class="d-block">
+                                <img src="{{port.uimg.url}}" alt="blog">
+                            </a>
+                            <a class="tag">{{port.uname}}</a>
+                        </div>
+                        <div class="content">
+                            <ul class="meta">
+                                <li><i class="ri-message-2-line"></i>{{port.uname}}</li>
+                                <li><i class="ri-time-line"></i> {{port.utime}}</li>
+                            </ul>
+                            <h3><a href="blog-details.html">{{port.ucont}}</a></h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="pagination-area">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Area -->
+
+       
+{% endblock body %}
